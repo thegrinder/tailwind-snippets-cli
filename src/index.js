@@ -1,4 +1,5 @@
 const postcss = require('postcss');
+const clipboardy = require('clipboardy');
 const { readFile, writeFile } = require('fs');
 const { Command, flags } = require('@oclif/command');
 const {
@@ -21,7 +22,7 @@ class TailwindSnippetsCliCommand extends Command {
     } = this.parse(TailwindSnippetsCliCommand);
 
     readFile(input, (err, css) => {
-      postcss([])
+      postcss([() => {}])
         .process(css, { from: input })
         .then(({ root }) => {
           let cssObject = {};
@@ -38,7 +39,10 @@ class TailwindSnippetsCliCommand extends Command {
         })
         .then((cssObject) => {
           const formattedSnippets = formatters[editor](cssObject);
-          this.log(JSON.stringify(formattedSnippets, null, 1));
+          return clipboardy.write(JSON.stringify(formattedSnippets, null, 1));
+        })
+        .then(() => {
+          this.log('Your snippet has been copied to clipboard! Enjoy');
         });
     });
   }

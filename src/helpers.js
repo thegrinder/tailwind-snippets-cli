@@ -7,17 +7,15 @@ const createSublimeCompletions = cssObject => ({
 });
 
 const createVscodeSnippets = cssObject => Object.keys(cssObject)
-  .reduce((acc, next) => {
-    return {
-      ...acc,
-      [next]: {
-        body: next,
-        prefix: next,
-        scope: 'javascript,javascriptreact,typescriptreact',
-        description: JSON.stringify(cssObject[next]),
-      },
-    };
-  }, {});
+  .reduce((acc, next) => ({
+    ...acc,
+    [next]: {
+      body: next,
+      prefix: next,
+      scope: 'javascript,javascriptreact,typescriptreact',
+      description: JSON.stringify(cssObject[next]),
+    },
+  }), {});
 
 module.exports = {
   isSingleClass,
