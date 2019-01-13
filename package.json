@@ -1,0 +1,37 @@
+{
+  "name": "tailwind-snippets-cli",
+  "description": "Cli that generates tailwindcss snippets for various text editors",
+  "version": "0.0.0",
+  "author": "Pawel Szczepkowski",
+  "bin": {
+    "tailwind-snippets-cli": "./bin/run"
+  },
+  "bugs": "https://github.com/thegrinder/tailwind-snippets-cli/issues",
+  "dependencies": {
+    "@oclif/command": "^1.5.8",
+    "@oclif/config": "^1.10.4",
+    "@oclif/plugin-help": "^2.1.4",
+    "postcss": "^7.0.11"
+  },
+  "devDependencies": {},
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "files": [
+    "/bin",
+    "/src"
+  ],
+  "homepage": "https://github.com/thegrinder/tailwind-snippets-cli",
+  "keywords": [
+    "oclif"
+  ],
+  "license": "MIT",
+  "main": "src/index.js",
+  "oclif": {
+    "bin": "tailwind-snippets-cli"
+  },
+  "repository": "thegrinder/tailwind-snippets-cli",
+  "scripts": {
+    "test": "echo NO TESTS"
+  }
+}
