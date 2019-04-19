@@ -1,6 +1,6 @@
 const isSingleClass = rule => !rule.selector.includes(',') && rule.selector.includes('.');
 
-const trimClass = selector => selector.replace('\\', '').replace('.', '');
+const trimClass = selector => selector.replace('html ', '').replace('\\', '').replace('.', '');
 
 const createSublimeCompletions = cssObject => ({
   completions: Object.keys(cssObject),
