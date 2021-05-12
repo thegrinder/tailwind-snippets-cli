@@ -12,7 +12,7 @@
     "@oclif/config": "^1.10.4",
     "@oclif/plugin-help": "^2.1.4",
     "clipboardy": "^2.1.0",
-    "postcss": "^7.0.11"
+    "postcss": "^8.2.10"
   },
   "engines": {
     "node": ">=8.0.0"
